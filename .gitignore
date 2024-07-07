@@ -13,16 +13,7 @@ env/
 .vscode/
 .idea/
 
-# Django related
-*.log
-*.pot
-*.pyo
-*.swp
-*.sql
-*.sqlite3
 
-# Media files (if not using a CDN)
-media/
 
 # Static files (collected by collectstatic)
 /staticfiles/
