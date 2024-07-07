@@ -13,9 +13,17 @@ class Technology(models.Model):
     
     
 class Project(models.Model):
+    POSITION_CHOICES = [
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('fullstack', 'Fullstack'),
+    ]
+    
     title = models.CharField(max_length=100)
+    project_link = models.TextField()
     slug = AutoSlugField(populate_from='title')
     description = models.TextField()
+    role = models.CharField(max_length=20, choices=POSITION_CHOICES, default='frontend')
     technologies = models.ManyToManyField(Technology)
     image = models.ImageField(upload_to = 'project-banner-image')
     created_at = models.DateTimeField(auto_now_add=True)
