@@ -1,0 +1,34 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.py[cod]
+
+# Python cache
+*.pyc
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+
+# Django related
+*.log
+*.pot
+*.pyo
+*.swp
+*.sql
+*.sqlite3
+
+# Media files (if not using a CDN)
+media/
+
+# Static files (collected by collectstatic)
+/staticfiles/
+
+# Secret keys
+.env
+
+# macOS specific files
+.DS_Store
