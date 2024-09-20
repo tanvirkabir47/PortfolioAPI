@@ -34,6 +34,18 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
+    def save(self, *args, **kwargs):
+        try:
+            # Get the existing project object from the database
+            this = Project.objects.get(id=self.id)
+            # If a new image is uploaded, delete the old one
+            if this.image != self.image:
+                this.image.delete(save=False)
+        except Project.DoesNotExist:
+            pass  # This means it's a new object, so no previous image to delete
+
+        super(Project, self).save(*args, **kwargs)
+    
     
     
 
